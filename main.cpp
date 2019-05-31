@@ -1,7 +1,9 @@
 #include <iostream>
+#include "ArrayBitmap.h"
 
 int main() {
-	std::cout << "Hello World!\n";
+	ArrayBitmap bitmap{7, 7};
+	std::cout << bitmap << "\n";
 
 	getchar();
 	return 0;
