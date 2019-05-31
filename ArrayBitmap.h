@@ -11,8 +11,8 @@ public:
 
 	unsigned int width() const;
 	unsigned int height() const;
-	//bool& operator()(unsigned x, unsigned y);
-	//bool operator() (unsigned x, unsigned y) const;
+	bool& operator()(unsigned x, unsigned y);
+	bool operator() (unsigned x, unsigned y) const;
 
 	~ArrayBitmap();
 private:

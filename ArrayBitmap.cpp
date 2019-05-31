@@ -16,13 +16,15 @@ unsigned int ArrayBitmap::width() const {
 	return width_;
 }
 
-//bool & ArrayBitmap::operator()(unsigned x, unsigned y) {
-//	// TODO: insert return statement here
-//}
-//
-//bool ArrayBitmap::operator()(unsigned x, unsigned y) const {
-//	return false;
-//}
+bool & ArrayBitmap::operator()(unsigned x, unsigned y) {
+	// TODO: validation + exceptions
+	return bitmap_[y - 1][x - 1];
+}
+
+bool ArrayBitmap::operator()(unsigned x, unsigned y) const {
+	// TODO: validation + exceptions
+	return bitmap_[y - 1][x - 1];
+}
 
 ArrayBitmap::~ArrayBitmap() {
 	for (int i = 0; i < height_; i++) {
