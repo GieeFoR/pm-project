@@ -9,8 +9,3 @@ public:
 	
 	virtual ~Bitmap() {}
 };
-
-class Transformation {
-public:
-	virtual void transform(Bitmap&) = 0;
-};
