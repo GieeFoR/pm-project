@@ -1,17 +1,19 @@
 #include <iostream>
 #include "ArrayBitmap.h"
+#include "Inversion.h"
 
 int main() {
-	ArrayBitmap bitmap{7, 7};
-	bitmap(1, 1) = bitmap(2, 1) = bitmap(1, 2) = bitmap(2, 2) = true;
+	ArrayBitmap bitmap{4, 4};
+	bitmap(0, 0) = bitmap(1, 1) = bitmap(2, 2) = bitmap(3, 3) = true;
+
+	std::cout << "Before:\n";
 	std::cout << bitmap << "\n";
 
-	std::cout << "Test:\n";
-	std::cout << bitmap(1, 1) << "\n";
-	std::cout << bitmap(2, 1) << "\n";
-	std::cout << bitmap(1, 2) << "\n";
-	std::cout << bitmap(2, 2) << "\n";
-	std::cout << bitmap(3, 3) << "\n";
+	Inversion inversion;
+	inversion.transform(bitmap);
+
+	std::cout << "After:\n";
+	std::cout << bitmap << "\n";
 
 	getchar();
 	return 0;
