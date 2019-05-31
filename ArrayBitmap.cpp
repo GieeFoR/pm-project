@@ -18,12 +18,12 @@ unsigned int ArrayBitmap::width() const {
 
 bool & ArrayBitmap::operator()(unsigned x, unsigned y) {
 	// TODO: validation + exceptions
-	return bitmap_[y - 1][x - 1];
+	return bitmap_[y][x];
 }
 
 bool ArrayBitmap::operator()(unsigned x, unsigned y) const {
 	// TODO: validation + exceptions
-	return bitmap_[y - 1][x - 1];
+	return bitmap_[y][x];
 }
 
 ArrayBitmap::~ArrayBitmap() {
@@ -36,8 +36,7 @@ ArrayBitmap::~ArrayBitmap() {
 std::ostream& operator<<(std::ostream& out, const ArrayBitmap& bitmap) {
 	for (int i = 0; i < bitmap.height_; i++) {
 		for (int j = 0; j < bitmap.width_; j++) {
-			char c = bitmap.bitmap_[i][j] ? '1' : '0';
-			out << c << " ";
+			out << bitmap.bitmap_[i][j] << " ";
 		}
 		out << "\n";
 	}
